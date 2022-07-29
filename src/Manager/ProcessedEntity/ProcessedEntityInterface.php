@@ -12,13 +12,13 @@ interface ProcessedEntityInterface
     /**
      * @return RequestEntityInterface|RequestEntityInterface[]
      */
-    public function save(): RequestEntityInterface|array;
+    public function save();
 
     /**
      * @param RequestEntityInterface|RequestEntityInterface[] $entities
      */
-    public function setAdaptedEntity(RequestEntityInterface|array $entities): void;
+    public function setAdaptedEntity($entities): void;
 
     /** @return RequestEntityInterface|RequestEntityInterface[] */
-    public function getEntity(): RequestEntityInterface|array;
+    public function getEntity();
 }

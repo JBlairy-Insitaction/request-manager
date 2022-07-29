@@ -8,15 +8,17 @@ use Insitaction\RequestManagerBundle\Manager\Entity\RequestEntityInterface;
 class ProcessedEntity implements ProcessedEntityInterface
 {
     /** @var RequestEntityInterface|RequestEntityInterface[] */
-    private array|RequestEntityInterface $entities;
+    private $entities;
+    private EntityManagerInterface $em;
 
     public function __construct(
-        private EntityManagerInterface $em
+        EntityManagerInterface $em
     ) {
+        $this->em = $em;
     }
 
     /** @return RequestEntityInterface|RequestEntityInterface[] */
-    public function getEntity(): RequestEntityInterface|array
+    public function getEntity()
     {
         return $this->entities;
     }
@@ -24,13 +26,13 @@ class ProcessedEntity implements ProcessedEntityInterface
     /**
      * @param RequestEntityInterface|RequestEntityInterface[] $entities
      */
-    public function setAdaptedEntity(RequestEntityInterface|array $entities): void
+    public function setAdaptedEntity($entities): void
     {
         $this->entities = $entities;
     }
 
     /** @return RequestEntityInterface|RequestEntityInterface[] */
-    public function save(): RequestEntityInterface|array
+    public function save()
     {
         if (is_array($this->entities)) {
             foreach ($this->entities as $entity) {

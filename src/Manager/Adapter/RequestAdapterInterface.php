@@ -4,7 +4,6 @@ namespace Insitaction\RequestManagerBundle\Manager\Adapter;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Insitaction\RequestManagerBundle\Manager\ProcessedEntity\ProcessedEntityInterface;
-use stdClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -25,7 +24,7 @@ interface RequestAdapterInterface
     /**
      * @param array<mixed, mixed> $data
      */
-    public function validation(array|stdClass $data): bool;
+    public function validation($data): bool;
 
     public function process(Request $request): ProcessedEntityInterface;
 

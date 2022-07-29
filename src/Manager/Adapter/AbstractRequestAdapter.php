@@ -21,12 +21,18 @@ abstract class AbstractRequestAdapter implements RequestAdapterInterface
 
     /** @var string[] */
     private array $groups;
+    private ProcessedEntityInterface $processedEntity;
+    private EntityManagerInterface $em;
+    private SerializerInterface $serializer;
 
     public function __construct(
-        private SerializerInterface $serializer,
-        private EntityManagerInterface $em,
-        private ProcessedEntityInterface $processedEntity
+        SerializerInterface $serializer,
+        EntityManagerInterface $em,
+        ProcessedEntityInterface $processedEntity
     ) {
+        $this->serializer = $serializer;
+        $this->processedEntity = $processedEntity;
+        $this->em = $em;
         $this->entityClassName = $this->getEntityClassname();
         $this->groups = $this->setGroups();
     }
@@ -101,7 +107,7 @@ abstract class AbstractRequestAdapter implements RequestAdapterInterface
     /**
      * @param array<mixed, mixed>|stdClass $data
      */
-    private function getObject(array|stdClass $data): ?RequestEntityInterface
+    private function getObject($data): ?RequestEntityInterface
     {
         $data = (array)$data;
 

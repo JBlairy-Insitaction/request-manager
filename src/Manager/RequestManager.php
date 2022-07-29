@@ -8,8 +8,11 @@ use RuntimeException;
 
 class RequestManager implements RequestManagerInterface
 {
-    public function __construct(private ContainerInterface $container)
+    private ContainerInterface $container;
+
+    public function __construct(ContainerInterface $container)
     {
+        $this->container = $container;
     }
 
     public function getAdapter(string $adapterClassname): RequestAdapterInterface

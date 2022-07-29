@@ -4,12 +4,11 @@
     "description": "Request validation and persist.",
     "type": "symfony-bundle",
     "require": {
-        "php": ">=8.0",
-        "symfony/framework-bundle": "^5.3",
-        "doctrine/orm": "^2.10",
-        "symfony/deprecation-contracts": "^2.1",
-        "symfony/serializer": "^5.3",
-        "doctrine/doctrine-bundle": "^2.4"
+        "php": ">=7.4",
+        "symfony/framework-bundle": "^4.4",
+        "doctrine/orm": "^2.7",
+        "symfony/serializer": "4.4.16",
+        "doctrine/doctrine-bundle": "^2.3"
     },
     "autoload": {
         "psr-4": {
@@ -30,10 +29,10 @@
         "phpstan/phpstan-strict-rules": "^1.1",
         "phpstan/phpstan-doctrine": "^1.0",
         "phpstan/phpstan-symfony": "^1.0",
-        "symfony/dependency-injection": "^5.3",
-        "symfony/config": "^5.3",
-        "symfony/http-kernel": "^5.3",
-        "symfony/yaml": "^5.3"
+        "symfony/dependency-injection": "^4.4",
+        "symfony/config": "^4.4",
+        "symfony/http-kernel": "^4.4",
+        "symfony/yaml": "^4.4"
     },
     "scripts": {
         "phpcsfixer": "./vendor/bin/php-cs-fixer fix",
