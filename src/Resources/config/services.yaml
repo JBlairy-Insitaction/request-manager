@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Insitaction\RequestManagerBundle\Manager\RequestManager: ~
+    Insitaction\RequestManagerBundle\Manager\RequestManagerInterface: '@Insitaction\RequestManagerBundle\Manager\RequestManager'
+
+    Insitaction\RequestManagerBundle\Manager\ProcessedEntity\ProcessedEntity: ~
+    Insitaction\RequestManagerBundle\Manager\ProcessedEntity\ProcessedEntityInterface: '@Insitaction\RequestManagerBundle\Manager\ProcessedEntity\ProcessedEntity'
