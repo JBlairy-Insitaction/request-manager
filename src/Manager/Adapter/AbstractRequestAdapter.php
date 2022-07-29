@@ -137,4 +137,12 @@ abstract class AbstractRequestAdapter implements RequestAdapterInterface
         /* @phpstan-ignore-next-line */
         return $classname;
     }
+
+    /**
+     * @param array<mixed, mixed> $data
+     */
+    public function validation($data): bool
+    {
+        return true;
+    }
 }
